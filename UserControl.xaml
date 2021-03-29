@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Chat.UserControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chat"
+        mc:Ignorable="d" d:DesignWidth="300">
+    <Border Padding="5" Background="Blue">
+        <Grid>
+
+            <!--Profile picture-->
+            <Border VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    CornerRadius="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                    Width="35"
+                    BorderBrush="White"
+                    BorderThickness="1"
+                    Background="Green"
+                    >
+                <TextBlock Text="U"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           Foreground="White"
+                           FontFamily="Calibri"
+                           FontSize="16"/>
+            </Border>
+
+            <!-- Chat msg container-->
+            <Grid Margin="25 0 0 0">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!-- Speech bubble rectangle -->
+                <Border CornerRadius="10"
+                    Padding="15"
+                    Background="White">
+
+                    <!-- Message box -->
+                    <TextBlock VerticalAlignment="Center"
+                           TextWrapping="Wrap"
+                           FontFamily="Calibri"
+                           FontSize="16"
+                           Foreground="Blue"
+                           Text="Lorem ipsum dolor sit amet"/>
+                    
+                </Border>
+
+                <Path Grid.Row="1" 
+                      Stroke="Black"
+                      Panel.ZIndex="1"
+                      Margin="15 0 0 0"
+                      Data="M 0,0 L 10,10 L 20,0 L 0,0" 
+                      StrokeThickness="0" 
+                      Fill="White"/>
+            </Grid>
+        </Grid>
+
+    </Border>
+</UserControl>
